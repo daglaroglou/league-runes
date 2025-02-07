@@ -4,6 +4,7 @@ import java.io.File;
 
 public class GetLeaguePath {
     public static String GetPath() {
+        try {
         return ProcessHandle.allProcesses()
             .filter(process -> process.info().command().isPresent())
             .map(process -> process.info().command().get())
@@ -14,5 +15,9 @@ public class GetLeaguePath {
             })
             .findFirst()
             .orElse(null);
+        }
+        catch (Exception e) {
+            return null;
+        }
     }
 }
