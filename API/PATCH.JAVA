@@ -8,13 +8,12 @@ import java.net.http.HttpRequest.BodyPublishers;
 import java.net.http.HttpResponse;
 
 public class PATCH {
-    public void patch(String url, String auth, Object data) throws IOException, InterruptedException {
+    public void patch(String url, String auth, Object data, String endpoint) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest
         .newBuilder()
         .method("PATCH", BodyPublishers.ofString(data.toString()))
-        .uri(URI.create(url))
+        .uri(URI.create(url+endpoint))
         .header("Authorization", auth)
-        .header("Content-Type", "application/json")
         .build();
 
         HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());

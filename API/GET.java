@@ -7,11 +7,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class GET {
-    public void get(String url, String auth) throws IOException, InterruptedException {
+    public void get(String url, String auth, String endpoint) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest
         .newBuilder()
         .GET()
-        .uri(URI.create(url))
+        .uri(URI.create(url+endpoint))
         .header("Autorization", auth)
         .build();
 

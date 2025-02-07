@@ -7,11 +7,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class DELETE {
-    public void delete(String url, String auth) throws IOException, InterruptedException {
+    public void delete(String url, String auth, String endpoint) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest
         .newBuilder()
         .DELETE()
-        .uri(URI.create(url))
+        .uri(URI.create(url+endpoint))
         .header("Autorization", auth)
         .build();
 
