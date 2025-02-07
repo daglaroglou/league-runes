@@ -17,7 +17,7 @@ public class POST {
 
         HttpRequest request = HttpRequest.newBuilder()
                 .POST(bodyPublisher)
-                .uri(URI.create(url+endpoint))
+                .uri(URI.create("http://"+url+endpoint))
                 .header("Authorization", auth)
                 .build();
 

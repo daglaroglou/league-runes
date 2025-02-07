@@ -11,7 +11,7 @@ public class DELETE {
         HttpRequest request = HttpRequest
         .newBuilder()
         .DELETE()
-        .uri(URI.create(url+endpoint))
+        .uri(URI.create("http://"+url+endpoint))
         .header("Autorization", auth)
         .build();
 

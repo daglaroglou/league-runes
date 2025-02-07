@@ -12,7 +12,7 @@ public class PATCH {
         HttpRequest request = HttpRequest
         .newBuilder()
         .method("PATCH", BodyPublishers.ofString(data.toString()))
-        .uri(URI.create(url+endpoint))
+        .uri(URI.create("http://"+url+endpoint))
         .header("Authorization", auth)
         .build();
 

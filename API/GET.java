@@ -11,7 +11,7 @@ public class GET {
         HttpRequest request = HttpRequest
         .newBuilder()
         .GET()
-        .uri(URI.create(url+endpoint))
+        .uri(URI.create("http://"+url+endpoint))
         .header("Autorization", auth)
         .build();
 

@@ -12,7 +12,7 @@ public class PUT {
         HttpRequest request = HttpRequest
         .newBuilder()
         .PUT(BodyPublishers.ofString(data.toString()))
-        .uri(URI.create(url+endpoint))
+        .uri(URI.create("http://"+url+endpoint))
         .header("Authorization", auth)
         .build();
 
